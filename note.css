@@ -258,7 +258,7 @@ button[type=button].note-submit-disabled {
     background: transparent;
     width: 50px;;
     padding: 5px 20px 5px 5px;
-    font-size: 16px;
+    font-size: .8rem;
     border: 1px solid #ccc;
     height: 20px;
 }
