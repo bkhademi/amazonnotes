@@ -366,7 +366,7 @@ button[type=button].note-submit-disabled {
         text-align: center;
     }
     #notes-container .note {
-        height: 30%;
+        height: 200px;
         width: 80%;
     }
 
