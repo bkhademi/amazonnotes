@@ -1,0 +1,380 @@
+/*Title, fonts*/
+
+html {
+    font-size: 16px;
+    font-family: ‘Trebuchet MS’, Helvetica, sans-serif;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #eee;
+}
+
+h2.title-main {
+    font-size: 2rem;
+    text-align: center;
+    color: #232f3e;
+    margin: 15px 0;
+}
+
+h2.title-main-logo {
+    font-size: 1.35rem;
+    text-align: center;
+    color: #232f3e;
+    margin: 15px 0;
+}
+
+h2.title-main > span, h2.title-main-logo > span {
+    color: #ff9900;
+}
+
+/*Inputs [text, checkbox, button]*/
+
+/*===Text====*/
+input[type=text].note-text-input {
+    border: none;
+    border-bottom: 2px solid #999;
+    display: block;
+    width: 235px;
+    margin: 5px auto 10px auto;
+    font-size: .75rem;
+    /*Transitions*/
+    -webkit-transition: all 450ms linear;
+    -moz-transition: all 450ms linear;
+    -ms-transition: all 450ms linear;
+    -o-transition: all 450ms linear;
+    transition: all 450ms linear;
+    background-color: inherit;
+}
+
+input[type=text].note-title-input {
+    border: none;
+    border-bottom: 2px solid #999;
+    display: block;
+    width: 100px;
+    margin: 5px auto;
+    font-size: .75rem;
+    /*Transitions*/
+    -webkit-transition: all 450ms linear;
+    -moz-transition: all 450ms linear;
+    -ms-transition: all 450ms linear;
+    -o-transition: all 450ms linear;
+    transition: all 450ms linear;
+    background-color: inherit;
+}
+
+input[type=text].note-text-input:hover, input[type=text].note-title-input:hover {
+    border: none;
+    border-bottom: 2px solid #232f3e;
+    outline: none;
+    color: #ff9900;
+}
+
+input[type=text].note-text-input:hover::-webkit-input-placeholder, input[type=text].note-title-input:hover::-webkit-input-placeholder {
+    color: #ff9900;
+}
+
+input[type=text].note-text-input:hover::-moz-placeholder, input[type=text].note-title-input:hover::-moz-placeholder {
+    color: #ff9900;
+}
+
+input[type=text].note-text-input:hover:-ms-input-placeholder, input[type=text].note-title-input:hover:-ms-input-placeholder {
+    color: #ff9900;
+}
+
+input[type=text].note-text-input:focus, input[type=text].note-title-input:focus {
+    border: none;
+    border-bottom: 2px solid #ff9900;
+    outline: none;
+    color: #232f3e;
+}
+
+input[type=text].note-text-input:focus::-webkit-input-placeholder, input[type=text].note-title-input:focus::-webkit-input-placeholder {
+    color: #232f3e;
+}
+
+input[type=text].note-text-input:focus::-moz-placeholder, input[type=text].note-title-input:focus::-moz-placeholder {
+    color: #232f3e;
+}
+
+input[type=text].note-text-input:focus:-ms-input-placeholder, input[type=text].note-title-input:focus:-ms-input-placeholder {
+    color: #232f3e;
+}
+
+/*===button====*/
+button[type=button].note-submit {
+    color: #fff;
+    display: block;
+    padding: 8px 0;
+    width: 200px;
+    margin: 25px auto 10px auto;
+    border: 1px solid #666;
+    border-radius: 3%;
+    -webkit-border-radius: 3%;
+    -moz-border-radius: 3%;
+    background-color: rgba(35, 47, 61, 1);
+}
+
+button[type=button].note-submit-disabled {
+    color: #fff;
+    border: none;
+    outline: none;
+    display: block;
+    padding: 8px 0;
+    width: 200px;
+    margin: 25px auto 10px auto;
+    border-radius: 3%;
+    -webkit-border-radius: 3%;
+    -moz-border-radius: 3%;
+    background-color: rgba(255, 153, 0, .5);
+}
+
+/*Welcome Container*/
+#welcome-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    max-height: 100%;
+}
+
+#welcome-container #first-note {
+    padding: 0 3%;
+    height: 33%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#welcome-container #first-note .first-note-form {
+    border: 2px solid #ffffff;
+    padding: 5% 0;
+    -webkit-border-radius: 3%;
+    -moz-border-radius: 3%;
+    border-radius: 1%;
+}
+
+/*Main Note Container CSS (non-edit mode)*/
+
+.page-container {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    max-height: 100%;
+    max-width: 100%;
+    /*Transitions*/
+    -webkit-transition: all 650ms linear;
+    -moz-transition: all 650ms linear;
+    -ms-transition: all 650ms linear;
+    -o-transition: all 650ms linear;
+    transition: all 650ms linear;
+}
+
+#notes-container {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    /*Transitions*/
+    -webkit-transition: all 650ms linear;
+    -moz-transition: all 650ms linear;
+    -ms-transition: all 650ms linear;
+    -o-transition: all 650ms linear;
+    transition: all 650ms linear;
+}
+
+/* ====Note Templates ====*/
+
+#notes-container .note {
+    padding: 5px;
+    position: relative;
+    display: inline-block;
+    margin: 8px;
+    -webkit-box-shadow: 3px 4px 10px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 3px 4px 10px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: 3px 4px 10px 1px rgba(0, 0, 0, 0.75);
+    resize: both;
+    overflow: hidden;
+    vertical-align: top;
+    height: 30%;
+    width: 31%;
+}
+
+#notes-container .note.note-1, .color-1 {
+    background-color: #feff86;
+}
+
+#notes-container .note.note-2, .color-2 {
+    background-color: #8be58e;
+}
+
+#notes-container .note.note-3, .color-3 {
+    background-color: #ff9e2b;
+}
+
+#notes-container .note.note-4, .color-4 {
+    background-color: #bfa2d7;
+}
+
+#notes-container .note.note-5, .color-5 {
+    background-color: #87e7ff;
+}
+
+#notes-container .note.note-6, .color-6 {
+    background-color: #f7f945;
+}
+
+#notes-container .note.note-7, .color-7 {
+    background-color: #fff;
+}
+
+#notes-container .note.note-8, .color-8 {
+    background-color: #e44e33;
+}
+
+/*#notes-container .note.note-9 {*/
+/*background-color: #ee68a7;*/
+/*}*/
+
+/*#notes-container .note.note-10 {*/
+/*background-color: #faad51;*/
+/*}*/
+
+#notes-container .note .note-header {
+    display: block;
+}
+
+#notes-container .note .options-container {
+    width: 100%;
+}
+
+#notes-container .note .options-container select.color-select {
+    float: left;
+    margin: 5px 15px;
+    text-align: center;
+    background: transparent;
+    width: 50px;;
+    padding: 5px 20px 5px 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    height: 20px;
+}
+
+
+#notes-container .note .options-container span.delete-note {
+    float: right;
+    padding: 5px 15px;
+    text-align: center;
+    color: #666;
+    font-family: 'Chewy', arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+#notes-container .note .note-header .note-title {
+    text-align: center;
+    cursor: pointer;
+    color: #232f3e;
+    font-size: .9rem;
+}
+
+#notes-container .note .note-body {
+    cursor: text;
+    width: 100%;
+    height: 65%;
+    position: relative;
+}
+
+#notes-container .note .note-body textarea {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block; /*reset from inline*/
+    width: 100%;
+    margin: 0; /*remove defaults*/
+    padding: 4px 15px;
+    overflow-y: hidden; /*resets IE*/
+    overflow-x: hidden; /*resets IE*/
+    border: none;
+    outline: none;
+    background-color: inherit;
+    max-width: 100%;
+    height: 100%;
+    font-size: .9rem;
+    color: #000;
+}
+
+#notes-container .note .note-footer {
+    cursor: pointer;
+    position: relative;
+    bottom: 10%;
+    text-align: center;
+    font-size: .7rem;
+    color: #999;
+    text-decoration: underline;
+    font-style: italic;
+}
+
+/*=== Create Note Fab ====*/
+#create-fab {
+    z-index: 500;
+    display: inline;
+    position: fixed;
+    bottom: 10%;
+    right: 10%;
+}
+
+#create-fab button[type=button].create-note-fab {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    border: none;
+    outline: none;
+    font-size: 1.8rem;
+    font-weight: bolder;
+    color: #fff;
+    background-color: #232f3e;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+
+@media screen and (max-width: 645px) {
+
+    #notes-container .note {
+        height: 30%;
+        width: 24%;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    #page-container{
+        width: 95vw;
+    }
+    h2.title-main {
+        font-size: 1rem;
+    }
+
+    #notes-container {
+        text-align: center;
+    }
+    #notes-container .note {
+        height: 30%;
+        width: 80%;
+    }
+
+}
+
+@media screen and (max-width: 1258px) and (min-width: 646px) {
+    #notes-container .note {
+        height: 30%;
+        width: 24%;
+    }
+}

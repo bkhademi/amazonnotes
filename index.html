@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note Buddy</title>
+    <link href="./note.css" rel="stylesheet">
+</head>
+<body>
+<h2 id="main-logo" class="title-main-logo">Ama<span>z</span>on Notes<span>.</span></h2>
+<div id="page-container">
+
+</div>
+<div id="create-fab">
+    <button class="create-note-fab" type="button">+</button>
+</div>
+<div id="welcome-container">
+    <div id="first-note">
+        <div class="first-note-form">
+            <h2 class="title-main"> Welcome <span>to</span> Amazon Notes<span>!</span></h2>
+            <input class="note-text-input" type="text" placeholder="Note Title...">
+            <button id="first-note-button" class="note-submit-disabled" type="button">Create</button>
+        </div>
+    </div>
+</div>
+
+
+<!--Templates via Scripts-->
+
+<!--Note Template-->
+<script id="note-template" type="text/x-custom-template">
+    <div id="{{id}}" class="note {{noteClass}}">
+        <div class="options-container">
+            <select class="color-select">
+                <option class="color-1"></option>
+                <option class="color-2"></option>
+                <option class="color-3"></option>
+                <option class="color-4"></option>
+                <option class="color-5"></option>
+                <option class="color-6"></option>
+                <option class="color-7"></option>
+                <option class="color-8"></option>
+            </select>
+            <span class="delete-note">x</span>
+            <div style="clear: both"></div>
+        </div>
+        <div class="note-header">
+            <h2 class="note-title">{{title}}</h2>
+        </div>
+        <div class="note-body">
+            <textarea>{{noteContent}}</textarea>
+        </div>
+    </div>
+</script>
+
+
+<!--Note Container Templates-->
+<script id="note-container-template" type="text/x-custom-template">
+    <div id="notes-container">
+        <div></div>
+    </div>
+</script>
+
+<!--Scripts-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="./note.js"></script>
+</body>
+</html>
