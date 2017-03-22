@@ -160,6 +160,7 @@
     }
 
     function deleteNote(event) {
+        event.preventDefault();
         event.stopPropagation();
         var note = event.data;
         note.remove();
